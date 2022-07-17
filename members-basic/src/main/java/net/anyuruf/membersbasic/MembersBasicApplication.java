@@ -1,6 +1,15 @@
 package net.anyuruf.membersbasic;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.UUID;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -20,8 +29,8 @@ public class MembersBasicApplication {
       MemberBasic john = new MemberBasic(UUID.randomUUID(), "Jenesio Omodo", "Anyuru", LocalDate.of(1927, Month.NOVEMBER, 11), new HashSet<>());
       MemberBasic jane = new MemberBasic(UUID.randomUUID(), "Anna Mary", "Kababito", new HashSet<>());
       
-      Vet savedJohn = memberRepository.save(john);
-      Vet savedJane = memberRepository.save(jane);
+      MemberBasic savedJohn = memberRepository.save(john);
+      MemberBasic savedJane = memberRepository.save(jane);
 
       memberRepository.findAll()
         .forEach(v -> log.info("Vet: {}", v.getFirstName()));
