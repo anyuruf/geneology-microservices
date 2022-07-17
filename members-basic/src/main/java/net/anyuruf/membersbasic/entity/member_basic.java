@@ -6,6 +6,13 @@ import java.util.UUID;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table
 public class MemberBasic {
   
@@ -15,44 +22,4 @@ public class MemberBasic {
   private String lastName;
   private LocalDate dob;
   private Set<UUID> children;
-
-  
-  public MemberBasic(UUID id, String firstName, String lastName, Set<UUID> children) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.children = children;
-  }
-
-  public UUID getId() {
-    return id;
-  }
-
-  public void setId(UUID id) {
-    this.id = id;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public Set<String> getChildren() {
-    return children;
-  }
-
-  public void setSpecialties(Set<UUID> children) {
-    this.children = children;
-  }
 }
