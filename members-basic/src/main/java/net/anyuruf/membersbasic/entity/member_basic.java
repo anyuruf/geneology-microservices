@@ -1,6 +1,5 @@
 package com.example.accessingdatacassandra;
 
-import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
