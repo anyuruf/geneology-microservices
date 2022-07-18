@@ -21,5 +21,4 @@ public class MemberBasic {
   private String firstName;
   private String lastName;
   private LocalDate dob;
-  private Set<UUID> children;
 }
