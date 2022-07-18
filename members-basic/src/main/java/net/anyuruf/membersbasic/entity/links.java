@@ -17,7 +17,7 @@ public class Link {
   
   @PrimaryKey
   private UUID id;
-  private String firstName;
-  private String lastName;
-  private LocalDate dob;
+  private UUID source;
+  private UUID target;
+  private Parent parent;
 }
