@@ -26,17 +26,12 @@ public class MembersBasicApplication {
     return args -> {
       memberRepository.deleteAll();
       
-      MemberBasic john = new MemberBasic(UUID.randomUUID(), "Jenesio Omodo", "Anyuru", LocalDate.of(1927, Month.NOVEMBER, 11), new HashSet<>());
-      MemberBasic jane = new MemberBasic(UUID.randomUUID(), "Anna Mary", "Kababito", new HashSet<>());
+      MemberBasic john = new MemberBasic(UUID.randomUUID(), "Jenesio Omodo", "Anyuru", LocalDate.of(1927, Month.NOVEMBER, 11));
+      MemberBasic jane = new MemberBasic(UUID.randomUUID(), "Anna Mary", "Kababito", LocalDate.of(1957, Month.APRIL, 22));
       
       MemberBasic savedJohn = memberRepository.save(john);
       MemberBasic savedJane = memberRepository.save(jane);
 
-      memberRepository.findAll()
-        .forEach(v -> log.info("Vet: {}", v.getFirstName()));
-      
-      memberRepository.findById(savedJohn.getId())
-        .ifPresent(v -> log.info("Vet by id: {}", v.getFirstName()));
     };
   }
 
