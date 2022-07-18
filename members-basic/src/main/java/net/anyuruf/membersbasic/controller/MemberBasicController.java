@@ -12,8 +12,9 @@ public class MemberBasicController {
 	private final MemberBasicRepository memberRepository;
     private final LinkRepository linkRepository
 
-	public SampleController(DataRepository dataRepository) {
-		this.repository = dataRepository;
+	public MemberBasicController(MemberBasicRepository memRepo LinkRepository linkRepo) {
+		this.memberRepository = memRepo;
+        this.linkRepository = linkRepo;
 	}
 
 	@QueryMapping
