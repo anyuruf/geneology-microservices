@@ -23,8 +23,8 @@ public class MemberBasicController {
 	public Mono<MemberInfo> String membersInfo() {
 		private MemberInfo memberInfo;
 
-		memberInfo.setNode(this.memberRepository.findAll());
-		memberInfo.setLink(this.linkRepository.findAll());
+		memberInfo.setNodes(this.memberRepository.findAll());
+		memberInfo.setLinks(this.linkRepository.findAll());
 
 		return this.memberInfo;
 	}
