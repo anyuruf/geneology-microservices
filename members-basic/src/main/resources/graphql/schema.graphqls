@@ -1,5 +1,5 @@
 type Query {
-    [MemberInfo] : membersInfo
+    MemberInfo : membersInfo
 }
 
 type MemberInfo {
