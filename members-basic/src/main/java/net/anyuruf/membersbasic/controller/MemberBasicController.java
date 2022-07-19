@@ -18,23 +18,8 @@ public class MemberBasicController {
 	}
 
 	@QueryMapping
-	public String greeting() {
+	public String membersInfo() {
 		return this.repository.getBasic();
-	}
-
-	@QueryMapping
-	public Mono<String> greetingMono() {
-		return this.repository.getGreeting();
-	}
-
-	@QueryMapping
-	public Flux<String> greetingsFlux() {
-		return this.repository.getGreetings();
-	}
-
-	@SubscriptionMapping
-	public Flux<String> greetings() {
-		return this.repository.getGreetingsStream();
 	}
 
 }

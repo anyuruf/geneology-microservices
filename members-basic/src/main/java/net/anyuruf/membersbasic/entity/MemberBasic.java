@@ -1,4 +1,4 @@
-package com.example.accessingdatacassandra;
+package net.anyuruf.membersbasic;
 
 import java.util.UUID;
 
