@@ -6,6 +6,8 @@ import reactor.core.publisher.Mono;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
+import net.anyuruf.membersbasic.entity.MemberInfo;
+
 @Controller
 public class MemberBasicController {
 
@@ -18,8 +20,13 @@ public class MemberBasicController {
 	}
 
 	@QueryMapping
-	public String membersInfo() {
-		return this.repository.getBasic();
+	public Mono<MemberInfo> String membersInfo() {
+		private MemberInfo memberInfo;
+
+		memberInfo.setNode(this.memberRepository.findAll());
+		memberInfo.setLink(this.linkRepository.findAll());
+
+		return this.memberInfo;
 	}
 
 }
