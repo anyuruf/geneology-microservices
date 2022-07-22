@@ -19,6 +19,6 @@ public class MemberBasic {
   private UUID id;
   private String firstName;
   private String lastName;
-  private LocalDate dob;
   private Gender gender;
+  private LocalDate dob;
 }
