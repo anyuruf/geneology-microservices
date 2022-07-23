@@ -1,6 +1,7 @@
 package net.anyuruf.membersbasic;
 
 import java.util.UUID;
+import java.util.time.LocalDate;
 
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;

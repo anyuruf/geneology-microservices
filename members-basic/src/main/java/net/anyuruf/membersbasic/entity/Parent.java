@@ -1,1 +1,3 @@
-public enum Parent { FATHER, MOTHER }
+package net.anyuruf.membersbasic;
+
+public enum Parent { FATHER, MOTHER };
