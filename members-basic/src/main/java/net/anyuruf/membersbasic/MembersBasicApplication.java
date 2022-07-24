@@ -17,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import net.anyuruf.membersbasic.service.MemberBasicRepository;
 import net.anyuruf.membersbasic.entity.GenderEnum.Gender;
+import net.anyuruf.membersbasic.entity.MemberBasic;
 
 @SpringBootApplication
 public class MembersBasicApplication {
