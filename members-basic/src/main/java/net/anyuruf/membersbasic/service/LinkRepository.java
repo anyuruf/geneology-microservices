@@ -1,4 +1,4 @@
-package net.anyuruf.membersbasic;
+package net.anyuruf.membersbasic.service;
 
 import java.util.UUID;
 

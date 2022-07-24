@@ -1,4 +1,4 @@
-package net.anyuruf.membersbasic;
+package net.anyuruf.membersbasic.controller;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 
 import net.anyuruf.membersbasic.service.MemberBasicRepository;
 import net.anyuruf.membersbasic.service.LinkRepository;
+import net.anyuruf.membersbasic.entity.MemberBasic;
 
 
 @Controller

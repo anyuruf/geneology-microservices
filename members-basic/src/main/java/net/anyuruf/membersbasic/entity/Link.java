@@ -1,4 +1,4 @@
-package net.anyuruf.membersbasic;
+package net.anyuruf.membersbasic.entity;
 
 import java.util.UUID;
 
@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import net.anyuruf.membersbasic.entity.Parent;
+import net.anyuruf.membersbasic.entity.ParentEnum.Parent;
 
 @Data
 @AllArgsConstructor

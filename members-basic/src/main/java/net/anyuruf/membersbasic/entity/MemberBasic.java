@@ -1,7 +1,7 @@
-package net.anyuruf.membersbasic;
+package net.anyuruf.membersbasic.entity;
 
 import java.util.UUID;
-import java.util.time.LocalDate;
+import java.time.LocalDate;
 
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
@@ -9,6 +9,8 @@ import org.springframework.data.cassandra.core.mapping.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import net.anyuruf.membersbasic.entity.GenderEnum.Gender;
 
 @Data
 @AllArgsConstructor
