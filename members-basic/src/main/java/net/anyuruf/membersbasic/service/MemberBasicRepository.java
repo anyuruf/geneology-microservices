@@ -5,5 +5,5 @@ import java.util.UUID;
 
 import net.anyuruf.membersbasic.entity.MemberBasic;
 
-interface MemberBasicRepository extends ReactiveCassandraRepository<MemberBasic, UUID> { 
+public interface MemberBasicRepository extends ReactiveCassandraRepository<MemberBasic, UUID> { 
 }
