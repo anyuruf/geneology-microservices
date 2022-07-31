@@ -50,4 +50,5 @@ public class MembersBasicApplication {
 				.subscribe(memberBasic -> log.info("saving " + memberBasic.toString())); 
 		  };
  	}
+}
 
