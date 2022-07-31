@@ -31,7 +31,6 @@ public class MembersBasicApplication {
 	@Bean
   	public CommandLineRunner clr(MemberBasicRepository repository) {
 		return args -> {
-		      repository.deleteAll();
 
 		      MemberBasic john = new MemberBasic(UUID.randomUUID(), "Jenesio Omodo", "Anyuru", Gender.MALE, LocalDate.of(1927, Month.NOVEMBER, 11));
 		      MemberBasic jane = new MemberBasic(UUID.randomUUID(), "Anna Mary", "Kababito", Gender.FEMALE, LocalDate.of(1957, Month.APRIL, 22));
@@ -39,8 +38,7 @@ public class MembersBasicApplication {
 		      MemberBasic paul = new MemberBasic(UUID.randomUUID(), "Paul", "Atim", Gender.MALE, LocalDate.of(1983, Month.APRIL, 11));
 
 		      Set<MemberBasic> members = Set.of(john, jane, francis, paul);
-
-		      return args -> {
+			
 			repository
 				.deleteAll() 
 				.thenMany(
@@ -50,7 +48,6 @@ public class MembersBasicApplication {
 				)
 				.thenMany(repository.findAll())
 				.subscribe(memberBasic -> log.info("saving " + memberBasic.toString())); 
-			  };
 		  };
  	}
 
