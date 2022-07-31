@@ -29,32 +29,28 @@ public class MembersBasicApplication {
 	}
 
 	@Bean
-  	public CommandLineRunner clr(MemberBasicRepository memberRepository) {
-    return args -> {
-      memberRepository.deleteAll();
-      
-      MemberBasic john = new MemberBasic(UUID.randomUUID(), "Jenesio Omodo", "Anyuru", Gender.MALE, LocalDate.of(1927, Month.NOVEMBER, 11));
-      MemberBasic jane = new MemberBasic(UUID.randomUUID(), "Anna Mary", "Kababito", Gender.FEMALE, LocalDate.of(1957, Month.APRIL, 22));
-      MemberBasic francis = new MemberBasic(UUID.randomUUID(), "Francis", "Anyuru", Gender.MALE, LocalDate.of(1981, Month.OCTOBER, 28));
-      MemberBasic paul = new MemberBasic(UUID.randomUUID(), "Paul", "Atim", Gender.MALE, LocalDate.of(1983, Month.APRIL, 11));
+  	public CommandLineRunner clr(MemberBasicRepository repository) {
+		return args -> {
+		      repository.deleteAll();
 
-      Set<MemberBasic> members = Set.of(john, jane, francis, paul);
+		      MemberBasic john = new MemberBasic(UUID.randomUUID(), "Jenesio Omodo", "Anyuru", Gender.MALE, LocalDate.of(1927, Month.NOVEMBER, 11));
+		      MemberBasic jane = new MemberBasic(UUID.randomUUID(), "Anna Mary", "Kababito", Gender.FEMALE, LocalDate.of(1957, Month.APRIL, 22));
+		      MemberBasic francis = new MemberBasic(UUID.randomUUID(), "Francis", "Anyuru", Gender.MALE, LocalDate.of(1981, Month.OCTOBER, 28));
+		      MemberBasic paul = new MemberBasic(UUID.randomUUID(), "Paul", "Atim", Gender.MALE, LocalDate.of(1983, Month.APRIL, 11));
 
-      return args -> {
-        repository
-                .deleteAll() 
-                .thenMany(
-                        Flux
-                                .just(members)
-                                .flatMap(repository::saveAll)
-                )
-                .thenMany(repository.findAll())
-                .subscribe(memberBasic -> log.info("saving " + memberBasic.toString())); 
-      };
+		      Set<MemberBasic> members = Set.of(john, jane, francis, paul);
 
+		      return args -> {
+			repository
+				.deleteAll() 
+				.thenMany(
+					Flux
+						.just(members)
+						.flatMap(repository::saveAll)
+				)
+				.thenMany(repository.findAll())
+				.subscribe(memberBasic -> log.info("saving " + memberBasic.toString())); 
+			  };
+		  };
+ 	}
 
-
-    };
-  }
-
-}
